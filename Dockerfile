@@ -8,7 +8,7 @@ RUN pip install pymongo tox && cd zaqar && tox -e genconfig && cp etc/zaqar.conf
 RUN pip install -e zaqar
 
 ADD zaqar.config zaqar/zaqar.config
-ADD run zaqar/run
+ADD run.sh zaqar/run.sh
 
 WORKDIR /root/zaqar
-CMD ./run $MONGO
+CMD ./run.sh $MONGO
